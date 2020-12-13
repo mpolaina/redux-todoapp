@@ -18,15 +18,15 @@ export class TodoListComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // this.todos = JSON.parse(localStorage.getItem('todos'))
     // this.store.select('todos')
     //     .subscribe( todos => this.todos = todos)
     this.store.subscribe( ({ todos, filtro }) => {
 
-        this.todos        = todos
+        this.todos = todos
+        console.log(this.todos)
         this.filtroActual = filtro
+        localStorage.setItem('todos', JSON.stringify(todos))
     })
-
   }
 
 }

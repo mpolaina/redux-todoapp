@@ -3,11 +3,10 @@ import * as action from './todo.actions';
 import { Todo } from './models/todo.model';
 
 
-export const initialState: Todo[] = [
-    new Todo('Comerme un poco de Kefir'),
-    new Todo('Lavarme los dientes'),
-    new Todo('A dormir!!!'),
-];
+export const initialState: Todo[] = JSON.parse(localStorage.getItem('todos')) || []
+    // new Todo('Comerme un poco de Kefir'),
+    // new Todo('Lavarme los dientes'),
+    // new Todo('A dormir!!!'),
 
 const _todoReducer = createReducer( initialState,
 

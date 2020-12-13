@@ -21,9 +21,6 @@ export class TodoAddComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    this.store.subscribe( ({ todos }) => this.todos = todos )
-
   }
 
   agregar(){
@@ -31,7 +28,6 @@ export class TodoAddComponent implements OnInit {
     if ( this.txtInput.invalid ) { return }
     this.store.dispatch( actions.crear( {texto: this.txtInput.value} ) )
     this.txtInput.reset()
-    // localStorage.setItem('todos', JSON.stringify(this.todos))
 
   }
 
