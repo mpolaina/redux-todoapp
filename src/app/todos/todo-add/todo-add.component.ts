@@ -30,8 +30,8 @@ export class TodoAddComponent implements OnInit {
 
     if ( this.txtInput.invalid ) { return }
     this.store.dispatch( actions.crear( {texto: this.txtInput.value} ) )
-    localStorage.setItem('todos', JSON.stringify(this.todos))
     this.txtInput.reset()
+    // localStorage.setItem('todos', JSON.stringify(this.todos))
 
   }
 
